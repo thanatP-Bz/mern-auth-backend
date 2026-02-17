@@ -37,8 +37,6 @@ export const verifyEmailController = asyncHandler(
   async (req: Request, res: Response) => {
     const { token } = req.query;
 
-    console.log(token);
-
     if (!token || typeof token !== "string") {
       throw new ApiError("Verification token is required", 400);
     }
